@@ -1,0 +1,309 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		06C82F86173DA80F007E7C8C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06C82F85173DA80F007E7C8C /* Cocoa.framework */; };
+		06C82F90173DA80F007E7C8C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 06C82F8E173DA80F007E7C8C /* InfoPlist.strings */; };
+		06C82F92173DA80F007E7C8C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C82F91173DA80F007E7C8C /* main.m */; };
+		06C82F96173DA80F007E7C8C /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 06C82F94173DA80F007E7C8C /* Credits.rtf */; };
+		06C82F99173DA80F007E7C8C /* BTSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C82F98173DA80F007E7C8C /* BTSAppDelegate.m */; };
+		06C82F9C173DA80F007E7C8C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06C82F9A173DA80F007E7C8C /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		06C82F82173DA80F007E7C8C /* iBTStatsServer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBTStatsServer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		06C82F85173DA80F007E7C8C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		06C82F88173DA80F007E7C8C /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		06C82F89173DA80F007E7C8C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		06C82F8A173DA80F007E7C8C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		06C82F8D173DA80F007E7C8C /* iBTStatsServer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iBTStatsServer-Info.plist"; sourceTree = "<group>"; };
+		06C82F8F173DA80F007E7C8C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		06C82F91173DA80F007E7C8C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		06C82F93173DA80F007E7C8C /* iBTStatsServer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iBTStatsServer-Prefix.pch"; sourceTree = "<group>"; };
+		06C82F95173DA80F007E7C8C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		06C82F97173DA80F007E7C8C /* BTSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTSAppDelegate.h; sourceTree = "<group>"; };
+		06C82F98173DA80F007E7C8C /* BTSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTSAppDelegate.m; sourceTree = "<group>"; };
+		06C82F9B173DA80F007E7C8C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		06C82F7F173DA80F007E7C8C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06C82F86173DA80F007E7C8C /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		06C82F79173DA80F007E7C8C = {
+			isa = PBXGroup;
+			children = (
+				06C82F8B173DA80F007E7C8C /* iBTStatsServer */,
+				06C82F84173DA80F007E7C8C /* Frameworks */,
+				06C82F83173DA80F007E7C8C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		06C82F83173DA80F007E7C8C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				06C82F82173DA80F007E7C8C /* iBTStatsServer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		06C82F84173DA80F007E7C8C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				06C82F85173DA80F007E7C8C /* Cocoa.framework */,
+				06C82F87173DA80F007E7C8C /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		06C82F87173DA80F007E7C8C /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				06C82F88173DA80F007E7C8C /* AppKit.framework */,
+				06C82F89173DA80F007E7C8C /* CoreData.framework */,
+				06C82F8A173DA80F007E7C8C /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		06C82F8B173DA80F007E7C8C /* iBTStatsServer */ = {
+			isa = PBXGroup;
+			children = (
+				06C82F97173DA80F007E7C8C /* BTSAppDelegate.h */,
+				06C82F98173DA80F007E7C8C /* BTSAppDelegate.m */,
+				06C82F9A173DA80F007E7C8C /* MainMenu.xib */,
+				06C82F8C173DA80F007E7C8C /* Supporting Files */,
+			);
+			path = iBTStatsServer;
+			sourceTree = "<group>";
+		};
+		06C82F8C173DA80F007E7C8C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				06C82F8D173DA80F007E7C8C /* iBTStatsServer-Info.plist */,
+				06C82F8E173DA80F007E7C8C /* InfoPlist.strings */,
+				06C82F91173DA80F007E7C8C /* main.m */,
+				06C82F93173DA80F007E7C8C /* iBTStatsServer-Prefix.pch */,
+				06C82F94173DA80F007E7C8C /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		06C82F81173DA80F007E7C8C /* iBTStatsServer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 06C82F9F173DA80F007E7C8C /* Build configuration list for PBXNativeTarget "iBTStatsServer" */;
+			buildPhases = (
+				06C82F7E173DA80F007E7C8C /* Sources */,
+				06C82F7F173DA80F007E7C8C /* Frameworks */,
+				06C82F80173DA80F007E7C8C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iBTStatsServer;
+			productName = iBTStatsServer;
+			productReference = 06C82F82173DA80F007E7C8C /* iBTStatsServer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		06C82F7A173DA80F007E7C8C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = BTS;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = TeraMoLabs;
+			};
+			buildConfigurationList = 06C82F7D173DA80F007E7C8C /* Build configuration list for PBXProject "iBTStatsServer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 06C82F79173DA80F007E7C8C;
+			productRefGroup = 06C82F83173DA80F007E7C8C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				06C82F81173DA80F007E7C8C /* iBTStatsServer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		06C82F80173DA80F007E7C8C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06C82F90173DA80F007E7C8C /* InfoPlist.strings in Resources */,
+				06C82F96173DA80F007E7C8C /* Credits.rtf in Resources */,
+				06C82F9C173DA80F007E7C8C /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		06C82F7E173DA80F007E7C8C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06C82F92173DA80F007E7C8C /* main.m in Sources */,
+				06C82F99173DA80F007E7C8C /* BTSAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		06C82F8E173DA80F007E7C8C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				06C82F8F173DA80F007E7C8C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		06C82F94173DA80F007E7C8C /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				06C82F95173DA80F007E7C8C /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		06C82F9A173DA80F007E7C8C /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				06C82F9B173DA80F007E7C8C /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		06C82F9D173DA80F007E7C8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		06C82F9E173DA80F007E7C8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		06C82FA0173DA80F007E7C8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iBTStatsServer/iBTStatsServer-Prefix.pch";
+				INFOPLIST_FILE = "iBTStatsServer/iBTStatsServer-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		06C82FA1173DA80F007E7C8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iBTStatsServer/iBTStatsServer-Prefix.pch";
+				INFOPLIST_FILE = "iBTStatsServer/iBTStatsServer-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		06C82F7D173DA80F007E7C8C /* Build configuration list for PBXProject "iBTStatsServer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				06C82F9D173DA80F007E7C8C /* Debug */,
+				06C82F9E173DA80F007E7C8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		06C82F9F173DA80F007E7C8C /* Build configuration list for PBXNativeTarget "iBTStatsServer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				06C82FA0173DA80F007E7C8C /* Debug */,
+				06C82FA1173DA80F007E7C8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 06C82F7A173DA80F007E7C8C /* Project object */;
+}

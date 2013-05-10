@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'iBTStatsServer' target in the 'iBTStatsServer' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif
