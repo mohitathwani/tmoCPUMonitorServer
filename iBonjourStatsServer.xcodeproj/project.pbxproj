@@ -11,24 +11,47 @@
 		06C82F90173DA80F007E7C8C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 06C82F8E173DA80F007E7C8C /* InfoPlist.strings */; };
 		06C82F92173DA80F007E7C8C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C82F91173DA80F007E7C8C /* main.m */; };
 		06C82F96173DA80F007E7C8C /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 06C82F94173DA80F007E7C8C /* Credits.rtf */; };
-		06C82F99173DA80F007E7C8C /* BTSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C82F98173DA80F007E7C8C /* BTSAppDelegate.m */; };
+		06C82F99173DA80F007E7C8C /* BSSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C82F98173DA80F007E7C8C /* BSSAppDelegate.m */; };
 		06C82F9C173DA80F007E7C8C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06C82F9A173DA80F007E7C8C /* MainMenu.xib */; };
+		06C82FAC173DA879007E7C8C /* NSFileManager+DirectoryLocations.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C82FA2173DA879007E7C8C /* NSFileManager+DirectoryLocations.m */; };
+		06C82FAD173DA879007E7C8C /* Machines.plist in Resources */ = {isa = PBXBuildFile; fileRef = 06C82FA4173DA879007E7C8C /* Machines.plist */; };
+		06C82FAE173DA879007E7C8C /* tsensors.plist in Resources */ = {isa = PBXBuildFile; fileRef = 06C82FA5173DA879007E7C8C /* tsensors.plist */; };
+		06C82FAF173DA879007E7C8C /* MachineDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C82FA7173DA879007E7C8C /* MachineDefaults.m */; };
+		06C82FB0173DA879007E7C8C /* smc.c in Sources */ = {isa = PBXBuildFile; fileRef = 06C82FA8173DA879007E7C8C /* smc.c */; };
+		06C82FB1173DA879007E7C8C /* smcWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C82FAB173DA879007E7C8C /* smcWrapper.m */; };
+		06C82FB4173DA893007E7C8C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06C82FB3173DA893007E7C8C /* Security.framework */; };
+		06C82FB6173DA89E007E7C8C /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06C82FB5173DA89E007E7C8C /* IOKit.framework */; };
+		3AE8700F2AD543F4B04EC781 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F2F41ACF49764479ACD44AD8 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		06C82F82173DA80F007E7C8C /* iBTStatsServer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBTStatsServer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		06C82F82173DA80F007E7C8C /* iBonjourStatsServer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBonjourStatsServer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06C82F85173DA80F007E7C8C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		06C82F88173DA80F007E7C8C /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		06C82F89173DA80F007E7C8C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		06C82F8A173DA80F007E7C8C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		06C82F8D173DA80F007E7C8C /* iBTStatsServer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iBTStatsServer-Info.plist"; sourceTree = "<group>"; };
+		06C82F8D173DA80F007E7C8C /* iBonjourStatsServer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iBonjourStatsServer-Info.plist"; sourceTree = "<group>"; };
 		06C82F8F173DA80F007E7C8C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		06C82F91173DA80F007E7C8C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		06C82F93173DA80F007E7C8C /* iBTStatsServer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iBTStatsServer-Prefix.pch"; sourceTree = "<group>"; };
+		06C82F93173DA80F007E7C8C /* iBonjourStatsServer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iBonjourStatsServer-Prefix.pch"; sourceTree = "<group>"; };
 		06C82F95173DA80F007E7C8C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		06C82F97173DA80F007E7C8C /* BTSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTSAppDelegate.h; sourceTree = "<group>"; };
-		06C82F98173DA80F007E7C8C /* BTSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTSAppDelegate.m; sourceTree = "<group>"; };
+		06C82F97173DA80F007E7C8C /* BSSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSSAppDelegate.h; sourceTree = "<group>"; };
+		06C82F98173DA80F007E7C8C /* BSSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BSSAppDelegate.m; sourceTree = "<group>"; };
 		06C82F9B173DA80F007E7C8C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		06C82FA2173DA879007E7C8C /* NSFileManager+DirectoryLocations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+DirectoryLocations.m"; sourceTree = "<group>"; };
+		06C82FA3173DA879007E7C8C /* NSFileManager+DirectoryLocations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+DirectoryLocations.h"; sourceTree = "<group>"; };
+		06C82FA4173DA879007E7C8C /* Machines.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Machines.plist; sourceTree = "<group>"; };
+		06C82FA5173DA879007E7C8C /* tsensors.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = tsensors.plist; sourceTree = "<group>"; };
+		06C82FA6173DA879007E7C8C /* MachineDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MachineDefaults.h; sourceTree = "<group>"; };
+		06C82FA7173DA879007E7C8C /* MachineDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MachineDefaults.m; sourceTree = "<group>"; };
+		06C82FA8173DA879007E7C8C /* smc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = smc.c; sourceTree = "<group>"; };
+		06C82FA9173DA879007E7C8C /* smc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = smc.h; sourceTree = "<group>"; };
+		06C82FAA173DA879007E7C8C /* smcWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = smcWrapper.h; sourceTree = "<group>"; };
+		06C82FAB173DA879007E7C8C /* smcWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = smcWrapper.m; sourceTree = "<group>"; };
+		06C82FB3173DA893007E7C8C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		06C82FB5173DA89E007E7C8C /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		CA95B4DCEA624F9082D1D3A3 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		F2F41ACF49764479ACD44AD8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,7 +59,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06C82FB6173DA89E007E7C8C /* IOKit.framework in Frameworks */,
+				06C82FB4173DA893007E7C8C /* Security.framework in Frameworks */,
 				06C82F86173DA80F007E7C8C /* Cocoa.framework in Frameworks */,
+				3AE8700F2AD543F4B04EC781 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,16 +72,18 @@
 		06C82F79173DA80F007E7C8C = {
 			isa = PBXGroup;
 			children = (
-				06C82F8B173DA80F007E7C8C /* iBTStatsServer */,
+				06C82FB2173DA87E007E7C8C /* SMC */,
+				06C82F8B173DA80F007E7C8C /* iBonjourStatsServer */,
 				06C82F84173DA80F007E7C8C /* Frameworks */,
 				06C82F83173DA80F007E7C8C /* Products */,
+				CA95B4DCEA624F9082D1D3A3 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
 		06C82F83173DA80F007E7C8C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				06C82F82173DA80F007E7C8C /* iBTStatsServer.app */,
+				06C82F82173DA80F007E7C8C /* iBonjourStatsServer.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -63,8 +91,11 @@
 		06C82F84173DA80F007E7C8C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				06C82FB5173DA89E007E7C8C /* IOKit.framework */,
+				06C82FB3173DA893007E7C8C /* Security.framework */,
 				06C82F85173DA80F007E7C8C /* Cocoa.framework */,
 				06C82F87173DA80F007E7C8C /* Other Frameworks */,
+				F2F41ACF49764479ACD44AD8 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -79,47 +110,67 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		06C82F8B173DA80F007E7C8C /* iBTStatsServer */ = {
+		06C82F8B173DA80F007E7C8C /* iBonjourStatsServer */ = {
 			isa = PBXGroup;
 			children = (
-				06C82F97173DA80F007E7C8C /* BTSAppDelegate.h */,
-				06C82F98173DA80F007E7C8C /* BTSAppDelegate.m */,
+				06C82F97173DA80F007E7C8C /* BSSAppDelegate.h */,
+				06C82F98173DA80F007E7C8C /* BSSAppDelegate.m */,
 				06C82F9A173DA80F007E7C8C /* MainMenu.xib */,
 				06C82F8C173DA80F007E7C8C /* Supporting Files */,
 			);
+			name = iBonjourStatsServer;
 			path = iBTStatsServer;
 			sourceTree = "<group>";
 		};
 		06C82F8C173DA80F007E7C8C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				06C82F8D173DA80F007E7C8C /* iBTStatsServer-Info.plist */,
+				06C82F8D173DA80F007E7C8C /* iBonjourStatsServer-Info.plist */,
 				06C82F8E173DA80F007E7C8C /* InfoPlist.strings */,
 				06C82F91173DA80F007E7C8C /* main.m */,
-				06C82F93173DA80F007E7C8C /* iBTStatsServer-Prefix.pch */,
+				06C82F93173DA80F007E7C8C /* iBonjourStatsServer-Prefix.pch */,
 				06C82F94173DA80F007E7C8C /* Credits.rtf */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		06C82FB2173DA87E007E7C8C /* SMC */ = {
+			isa = PBXGroup;
+			children = (
+				06C82FA2173DA879007E7C8C /* NSFileManager+DirectoryLocations.m */,
+				06C82FA3173DA879007E7C8C /* NSFileManager+DirectoryLocations.h */,
+				06C82FA4173DA879007E7C8C /* Machines.plist */,
+				06C82FA5173DA879007E7C8C /* tsensors.plist */,
+				06C82FA6173DA879007E7C8C /* MachineDefaults.h */,
+				06C82FA7173DA879007E7C8C /* MachineDefaults.m */,
+				06C82FA8173DA879007E7C8C /* smc.c */,
+				06C82FA9173DA879007E7C8C /* smc.h */,
+				06C82FAA173DA879007E7C8C /* smcWrapper.h */,
+				06C82FAB173DA879007E7C8C /* smcWrapper.m */,
+			);
+			name = SMC;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		06C82F81173DA80F007E7C8C /* iBTStatsServer */ = {
+		06C82F81173DA80F007E7C8C /* iBonjourStatsServer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 06C82F9F173DA80F007E7C8C /* Build configuration list for PBXNativeTarget "iBTStatsServer" */;
+			buildConfigurationList = 06C82F9F173DA80F007E7C8C /* Build configuration list for PBXNativeTarget "iBonjourStatsServer" */;
 			buildPhases = (
+				96CB182480304A53B735CE89 /* Check Pods Manifest.lock */,
 				06C82F7E173DA80F007E7C8C /* Sources */,
 				06C82F7F173DA80F007E7C8C /* Frameworks */,
 				06C82F80173DA80F007E7C8C /* Resources */,
+				40EDC1F11CDA4EC0BB52B313 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = iBTStatsServer;
+			name = iBonjourStatsServer;
 			productName = iBTStatsServer;
-			productReference = 06C82F82173DA80F007E7C8C /* iBTStatsServer.app */;
+			productReference = 06C82F82173DA80F007E7C8C /* iBonjourStatsServer.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -132,7 +183,7 @@
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = TeraMoLabs;
 			};
-			buildConfigurationList = 06C82F7D173DA80F007E7C8C /* Build configuration list for PBXProject "iBTStatsServer" */;
+			buildConfigurationList = 06C82F7D173DA80F007E7C8C /* Build configuration list for PBXProject "iBonjourStatsServer" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -144,7 +195,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				06C82F81173DA80F007E7C8C /* iBTStatsServer */,
+				06C82F81173DA80F007E7C8C /* iBonjourStatsServer */,
 			);
 		};
 /* End PBXProject section */
@@ -157,10 +208,43 @@
 				06C82F90173DA80F007E7C8C /* InfoPlist.strings in Resources */,
 				06C82F96173DA80F007E7C8C /* Credits.rtf in Resources */,
 				06C82F9C173DA80F007E7C8C /* MainMenu.xib in Resources */,
+				06C82FAD173DA879007E7C8C /* Machines.plist in Resources */,
+				06C82FAE173DA879007E7C8C /* tsensors.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		40EDC1F11CDA4EC0BB52B313 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+		96CB182480304A53B735CE89 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		06C82F7E173DA80F007E7C8C /* Sources */ = {
@@ -168,7 +252,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				06C82F92173DA80F007E7C8C /* main.m in Sources */,
-				06C82F99173DA80F007E7C8C /* BTSAppDelegate.m in Sources */,
+				06C82F99173DA80F007E7C8C /* BSSAppDelegate.m in Sources */,
+				06C82FAC173DA879007E7C8C /* NSFileManager+DirectoryLocations.m in Sources */,
+				06C82FAF173DA879007E7C8C /* MachineDefaults.m in Sources */,
+				06C82FB0173DA879007E7C8C /* smc.c in Sources */,
+				06C82FB1173DA879007E7C8C /* smcWrapper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,24 +349,26 @@
 		};
 		06C82FA0173DA80F007E7C8C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA95B4DCEA624F9082D1D3A3 /* Pods.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "iBTStatsServer/iBTStatsServer-Prefix.pch";
-				INFOPLIST_FILE = "iBTStatsServer/iBTStatsServer-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "iBTStatsServer/iBonjourStatsServer-Prefix.pch";
+				INFOPLIST_FILE = "iBTStatsServer/iBonjourStatsServer-Info.plist";
+				PRODUCT_NAME = iBonjourStatsServer;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
 		06C82FA1173DA80F007E7C8C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA95B4DCEA624F9082D1D3A3 /* Pods.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "iBTStatsServer/iBTStatsServer-Prefix.pch";
-				INFOPLIST_FILE = "iBTStatsServer/iBTStatsServer-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "iBTStatsServer/iBonjourStatsServer-Prefix.pch";
+				INFOPLIST_FILE = "iBTStatsServer/iBonjourStatsServer-Info.plist";
+				PRODUCT_NAME = iBonjourStatsServer;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -286,7 +376,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		06C82F7D173DA80F007E7C8C /* Build configuration list for PBXProject "iBTStatsServer" */ = {
+		06C82F7D173DA80F007E7C8C /* Build configuration list for PBXProject "iBonjourStatsServer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				06C82F9D173DA80F007E7C8C /* Debug */,
@@ -295,13 +385,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		06C82F9F173DA80F007E7C8C /* Build configuration list for PBXNativeTarget "iBTStatsServer" */ = {
+		06C82F9F173DA80F007E7C8C /* Build configuration list for PBXNativeTarget "iBonjourStatsServer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				06C82FA0173DA80F007E7C8C /* Debug */,
 				06C82FA1173DA80F007E7C8C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
