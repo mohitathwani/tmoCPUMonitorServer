@@ -20,5 +20,8 @@
 @property (assign) IBOutlet NSTextField *fanSpeed1;
 @property (assign) IBOutlet NSTextField *fanSpeed2;
 @property (assign) IBOutlet NSTextField *rpm2;
+@property (assign) IBOutlet NSTextField *serviceNameTextField;
+@property (assign) IBOutlet NSButton *connectButton;
+- (IBAction)connectButtonPressed:(id)sender;
 
 @end
