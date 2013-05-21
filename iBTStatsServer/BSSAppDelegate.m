@@ -37,13 +37,15 @@
 - (void)netServiceBrowser:(NSNetServiceBrowser *)aNetServiceBrowser didFindService:(NSNetService *)aNetService moreComing:(BOOL)moreComing {
     
     [self.services addObject:aNetService];
+    NSLog(@"Services count: %ld", (unsigned long)[self.services count]);
     NSLog(@"%@",aNetService);
     [aNetService resolveWithTimeout:5.0];
     
     NSString *serviceNameString = [NSString stringWithFormat:@"%@", aNetService];
     if ([serviceNameString rangeOfString:self.serviceNameTextField.stringValue].location == NSNotFound) {
         NSLog(@"string does not contain bla");
-        self.connectButton.enabled = !self.connectButton.isEnabled;
+//        self.connectButton.enabled = !self.connectButton.isEnabled;
+        [self.services removeAllObjects];
     } else {
         NSLog(@"string contains bla!");
         
@@ -90,7 +92,7 @@
         } repeats:YES];
         
         [self.serviceNameTextField setEditable:NO];
-        self.connectButton.enabled = !self.connectButton.isEnabled;
+        //self.connectButton.enabled = !self.connectButton.isEnabled;
         [self.connectButton setTitle:@"Stop"];
     }
     
@@ -107,7 +109,7 @@
 - (IBAction)connectButtonPressed:(id)sender {
     
     if (![self.serviceNameTextField.stringValue isEqualToString:EMPTY_STRING] && [[sender title] isEqualToString:@"Connect"]) {
-        self.connectButton.enabled = !self.connectButton.isEnabled;
+//        self.connectButton.enabled = !self.connectButton.isEnabled;
         self.browser = [[NSNetServiceBrowser alloc] init];
         self.services = [[NSMutableArray array] retain];
         [self.browser setDelegate:self];
