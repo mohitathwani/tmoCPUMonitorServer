@@ -11,6 +11,7 @@
 @interface BSSAppDelegate : NSObject <NSApplicationDelegate, NSNetServiceBrowserDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
+@property (assign) IBOutlet NSView *view;
 @property (nonatomic, retain) NSNetServiceBrowser *browser;
 @property (nonatomic, retain) NSMutableArray *services;
 @property (nonatomic, retain) NSDictionary *infoDictionary;

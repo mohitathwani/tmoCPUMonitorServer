@@ -27,7 +27,7 @@
     
     self.fanSpeeds = [[NSMutableArray alloc] init];
     
-    
+    [self.window setBackgroundColor:[NSColor colorWithPatternImage:[NSImage imageNamed:@"background.png"]]];
 
 
 }
