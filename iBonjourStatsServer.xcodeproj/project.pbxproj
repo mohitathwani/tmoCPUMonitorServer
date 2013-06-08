@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0681FA741763513F00D411D2 /* greenBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 0681FA731763513F00D411D2 /* greenBG.png */; };
 		06C82F86173DA80F007E7C8C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06C82F85173DA80F007E7C8C /* Cocoa.framework */; };
 		06C82F90173DA80F007E7C8C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 06C82F8E173DA80F007E7C8C /* InfoPlist.strings */; };
 		06C82F92173DA80F007E7C8C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C82F91173DA80F007E7C8C /* main.m */; };
@@ -22,6 +21,8 @@
 		06C82FB1173DA879007E7C8C /* smcWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C82FAB173DA879007E7C8C /* smcWrapper.m */; };
 		06C82FB4173DA893007E7C8C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06C82FB3173DA893007E7C8C /* Security.framework */; };
 		06C82FB6173DA89E007E7C8C /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06C82FB5173DA89E007E7C8C /* IOKit.framework */; };
+		06EF4C2917635D0F00831826 /* tmo.png in Resources */ = {isa = PBXBuildFile; fileRef = 06EF4C2817635D0F00831826 /* tmo.png */; };
+		06EF4C2B17635E5600831826 /* greenBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 06EF4C2A17635E5600831826 /* greenBG.png */; };
 		06FD5D3A1763374D00F4B7B9 /* KBButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 06FD5D351763374D00F4B7B9 /* KBButton.m */; };
 		06FD5D3B1763374D00F4B7B9 /* KBButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 06FD5D371763374D00F4B7B9 /* KBButtonCell.m */; };
 		06FD5D3C1763374D00F4B7B9 /* NSColor+ColorExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 06FD5D391763374D00F4B7B9 /* NSColor+ColorExtensions.m */; };
@@ -29,7 +30,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0681FA731763513F00D411D2 /* greenBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenBG.png; sourceTree = "<group>"; };
 		06C82F82173DA80F007E7C8C /* iBonjourStatsServer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBonjourStatsServer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06C82F85173DA80F007E7C8C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		06C82F88173DA80F007E7C8C /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -55,6 +55,8 @@
 		06C82FAB173DA879007E7C8C /* smcWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = smcWrapper.m; sourceTree = "<group>"; };
 		06C82FB3173DA893007E7C8C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		06C82FB5173DA89E007E7C8C /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		06EF4C2817635D0F00831826 /* tmo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tmo.png; sourceTree = "<group>"; };
+		06EF4C2A17635E5600831826 /* greenBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenBG.png; sourceTree = "<group>"; };
 		06FD5D341763374D00F4B7B9 /* KBButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBButton.h; sourceTree = "<group>"; };
 		06FD5D351763374D00F4B7B9 /* KBButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBButton.m; sourceTree = "<group>"; };
 		06FD5D361763374D00F4B7B9 /* KBButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBButtonCell.h; sourceTree = "<group>"; };
@@ -167,7 +169,8 @@
 		06F8AB54174BBEAA002D3607 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				0681FA731763513F00D411D2 /* greenBG.png */,
+				06EF4C2A17635E5600831826 /* greenBG.png */,
+				06EF4C2817635D0F00831826 /* tmo.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -244,7 +247,8 @@
 				06C82F9C173DA80F007E7C8C /* MainMenu.xib in Resources */,
 				06C82FAD173DA879007E7C8C /* Machines.plist in Resources */,
 				06C82FAE173DA879007E7C8C /* tsensors.plist in Resources */,
-				0681FA741763513F00D411D2 /* greenBG.png in Resources */,
+				06EF4C2917635D0F00831826 /* tmo.png in Resources */,
+				06EF4C2B17635E5600831826 /* greenBG.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
