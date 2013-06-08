@@ -27,7 +27,11 @@
     
     self.fanSpeeds = [[NSMutableArray alloc] init];
     
-    [self.window setBackgroundColor:[NSColor colorWithPatternImage:[NSImage imageNamed:@"background.png"]]];
+//    [self.window setBackgroundColor:[NSColor colorWithPatternImage:[NSImage imageNamed:@"greenBG.png"]]];
+    
+    NSImage *windowBG = [NSImage imageNamed:@"greenBG.png"];
+    [[self.window contentView] setWantsLayer:YES];
+    [[self.window contentView] layer].contents = windowBG;
     
 //    [[self.connectButton cell] setBackgroundColor:[NSColor colorWithPatternImage:[NSImage imageNamed:@"button.png"]]];
     [[self.connectButton cell] setKBButtonType:BButtonTypeInverse];
