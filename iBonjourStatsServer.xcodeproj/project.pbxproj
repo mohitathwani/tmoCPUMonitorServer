@@ -23,6 +23,9 @@
 		06C82FB4173DA893007E7C8C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06C82FB3173DA893007E7C8C /* Security.framework */; };
 		06C82FB6173DA89E007E7C8C /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06C82FB5173DA89E007E7C8C /* IOKit.framework */; };
 		06F8AB58174BC48B002D3607 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 06F8AB57174BC48B002D3607 /* background.png */; };
+		06FD5D3A1763374D00F4B7B9 /* KBButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 06FD5D351763374D00F4B7B9 /* KBButton.m */; };
+		06FD5D3B1763374D00F4B7B9 /* KBButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 06FD5D371763374D00F4B7B9 /* KBButtonCell.m */; };
+		06FD5D3C1763374D00F4B7B9 /* NSColor+ColorExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 06FD5D391763374D00F4B7B9 /* NSColor+ColorExtensions.m */; };
 		3AE8700F2AD543F4B04EC781 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F2F41ACF49764479ACD44AD8 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +57,12 @@
 		06C82FB3173DA893007E7C8C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		06C82FB5173DA89E007E7C8C /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		06F8AB57174BC48B002D3607 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		06FD5D341763374D00F4B7B9 /* KBButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBButton.h; sourceTree = "<group>"; };
+		06FD5D351763374D00F4B7B9 /* KBButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBButton.m; sourceTree = "<group>"; };
+		06FD5D361763374D00F4B7B9 /* KBButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBButtonCell.h; sourceTree = "<group>"; };
+		06FD5D371763374D00F4B7B9 /* KBButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBButtonCell.m; sourceTree = "<group>"; };
+		06FD5D381763374D00F4B7B9 /* NSColor+ColorExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSColor+ColorExtensions.h"; sourceTree = "<group>"; };
+		06FD5D391763374D00F4B7B9 /* NSColor+ColorExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSColor+ColorExtensions.m"; sourceTree = "<group>"; };
 		CA95B4DCEA624F9082D1D3A3 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		F2F41ACF49764479ACD44AD8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -76,6 +85,7 @@
 		06C82F79173DA80F007E7C8C = {
 			isa = PBXGroup;
 			children = (
+				06FD5D331763374D00F4B7B9 /* KBButton */,
 				06F8AB54174BBEAA002D3607 /* Images */,
 				06C82FB2173DA87E007E7C8C /* SMC */,
 				06C82F8B173DA80F007E7C8C /* iBonjourStatsServer */,
@@ -163,6 +173,19 @@
 				06F8AB57174BC48B002D3607 /* background.png */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		06FD5D331763374D00F4B7B9 /* KBButton */ = {
+			isa = PBXGroup;
+			children = (
+				06FD5D341763374D00F4B7B9 /* KBButton.h */,
+				06FD5D351763374D00F4B7B9 /* KBButton.m */,
+				06FD5D361763374D00F4B7B9 /* KBButtonCell.h */,
+				06FD5D371763374D00F4B7B9 /* KBButtonCell.m */,
+				06FD5D381763374D00F4B7B9 /* NSColor+ColorExtensions.h */,
+				06FD5D391763374D00F4B7B9 /* NSColor+ColorExtensions.m */,
+			);
+			path = KBButton;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +296,9 @@
 				06C82FAF173DA879007E7C8C /* MachineDefaults.m in Sources */,
 				06C82FB0173DA879007E7C8C /* smc.c in Sources */,
 				06C82FB1173DA879007E7C8C /* smcWrapper.m in Sources */,
+				06FD5D3A1763374D00F4B7B9 /* KBButton.m in Sources */,
+				06FD5D3B1763374D00F4B7B9 /* KBButtonCell.m in Sources */,
+				06FD5D3C1763374D00F4B7B9 /* NSColor+ColorExtensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

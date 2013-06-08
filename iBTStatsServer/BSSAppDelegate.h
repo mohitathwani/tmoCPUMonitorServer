@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "KBButton.h"
 
 @interface BSSAppDelegate : NSObject <NSApplicationDelegate, NSNetServiceBrowserDelegate>
 

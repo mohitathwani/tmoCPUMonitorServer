@@ -30,6 +30,7 @@
     [self.window setBackgroundColor:[NSColor colorWithPatternImage:[NSImage imageNamed:@"background.png"]]];
     
 //    [[self.connectButton cell] setBackgroundColor:[NSColor colorWithPatternImage:[NSImage imageNamed:@"button.png"]]];
+    [[self.connectButton cell] setKBButtonType:BButtonTypeInverse];
 
 
 }
