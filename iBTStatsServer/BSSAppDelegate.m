@@ -31,6 +31,9 @@
     
 //    [[self.connectButton cell] setBackgroundColor:[NSColor colorWithPatternImage:[NSImage imageNamed:@"button.png"]]];
     [[self.connectButton cell] setKBButtonType:BButtonTypeInverse];
+    
+    [self.serviceNameTextField setBezeled:NO];
+    [self.serviceNameTextField setDrawsBackground:NO];
 
 
 }
