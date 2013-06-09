@@ -211,8 +211,8 @@
 								<int key="NSCellFlags">68157504</int>
 								<int key="NSCellFlags2">138413056</int>
 								<string key="NSContents">-</string>
-								<object class="NSFont" key="NSSupport" id="205491227">
-									<string key="NSName">LucidaGrande</string>
+								<object class="NSFont" key="NSSupport" id="158190965">
+									<string key="NSName">Copse</string>
 									<double key="NSSize">45</double>
 									<int key="NSfFlags">16</int>
 								</object>
@@ -252,7 +252,7 @@
 								<int key="NSCellFlags">68157504</int>
 								<int key="NSCellFlags2">138413056</int>
 								<string key="NSContents">-</string>
-								<reference key="NSSupport" ref="205491227"/>
+								<reference key="NSSupport" ref="158190965"/>
 								<string key="NSCellIdentifier">_NS:1535</string>
 								<reference key="NSControlView" ref="951141054"/>
 								<reference key="NSBackgroundColor" ref="122771454"/>
@@ -273,7 +273,7 @@
 								<int key="NSCellFlags">68157504</int>
 								<int key="NSCellFlags2">138413056</int>
 								<string key="NSContents">-</string>
-								<reference key="NSSupport" ref="205491227"/>
+								<reference key="NSSupport" ref="158190965"/>
 								<string key="NSCellIdentifier">_NS:1535</string>
 								<reference key="NSControlView" ref="496232318"/>
 								<reference key="NSBackgroundColor" ref="122771454"/>
@@ -294,10 +294,10 @@
 								<int key="NSCellFlags">-1805647871</int>
 								<int key="NSCellFlags2">272663040</int>
 								<string key="NSContents"/>
-								<object class="NSFont" key="NSSupport" id="411023202">
-									<string key="NSName">LucidaGrande</string>
+								<object class="NSFont" key="NSSupport" id="690568698">
+									<string key="NSName">Copse</string>
 									<double key="NSSize">13</double>
-									<int key="NSfFlags">1044</int>
+									<int key="NSfFlags">16</int>
 								</object>
 								<string key="NSPlaceholderString">Cannot be empty*</string>
 								<string key="NSCellIdentifier">_NS:9</string>
@@ -329,12 +329,16 @@
 								<int key="NSCellFlags">67108864</int>
 								<int key="NSCellFlags2">134217728</int>
 								<string key="NSContents">Connect</string>
-								<reference key="NSSupport" ref="411023202"/>
+								<reference key="NSSupport" ref="690568698"/>
 								<string key="NSCellIdentifier">_NS:9</string>
 								<reference key="NSControlView" ref="876606763"/>
 								<int key="NSButtonFlags">-2034876416</int>
 								<int key="NSButtonFlags2">6</int>
-								<reference key="NSAlternateImage" ref="411023202"/>
+								<object class="NSFont" key="NSAlternateImage">
+									<string key="NSName">LucidaGrande</string>
+									<double key="NSSize">13</double>
+									<int key="NSfFlags">16</int>
+								</object>
 								<string key="NSAlternateContents"/>
 								<string key="NSKeyEquivalent"/>
 								<int key="NSPeriodicDelay">200</int>
@@ -348,14 +352,13 @@
 							<string key="NSFrame">{{39, 113}, {435, 17}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView"/>
 							<string key="NSReuseIdentifierKey">_NS:1535</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="471016074">
 								<int key="NSCellFlags">68157504</int>
 								<int key="NSCellFlags2">272630784</int>
 								<string key="NSContents">*This name must match the service name entered on the iOS device.</string>
-								<reference key="NSSupport" ref="411023202"/>
+								<reference key="NSSupport" ref="690568698"/>
 								<string key="NSCellIdentifier">_NS:1535</string>
 								<reference key="NSControlView" ref="1069070731"/>
 								<reference key="NSBackgroundColor" ref="122771454"/>

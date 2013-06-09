@@ -21,6 +21,8 @@
 		06C82FB1173DA879007E7C8C /* smcWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C82FAB173DA879007E7C8C /* smcWrapper.m */; };
 		06C82FB4173DA893007E7C8C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06C82FB3173DA893007E7C8C /* Security.framework */; };
 		06C82FB6173DA89E007E7C8C /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06C82FB5173DA89E007E7C8C /* IOKit.framework */; };
+		06CA83A11763682F008BCE81 /* redBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 06CA839F1763682F008BCE81 /* redBG.png */; };
+		06CA83A21763682F008BCE81 /* yellowBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 06CA83A01763682F008BCE81 /* yellowBG.png */; };
 		06EF4C2917635D0F00831826 /* tmo.png in Resources */ = {isa = PBXBuildFile; fileRef = 06EF4C2817635D0F00831826 /* tmo.png */; };
 		06EF4C2B17635E5600831826 /* greenBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 06EF4C2A17635E5600831826 /* greenBG.png */; };
 		06FD5D3A1763374D00F4B7B9 /* KBButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 06FD5D351763374D00F4B7B9 /* KBButton.m */; };
@@ -55,6 +57,8 @@
 		06C82FAB173DA879007E7C8C /* smcWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = smcWrapper.m; sourceTree = "<group>"; };
 		06C82FB3173DA893007E7C8C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		06C82FB5173DA89E007E7C8C /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		06CA839F1763682F008BCE81 /* redBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redBG.png; sourceTree = "<group>"; };
+		06CA83A01763682F008BCE81 /* yellowBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellowBG.png; sourceTree = "<group>"; };
 		06EF4C2817635D0F00831826 /* tmo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tmo.png; sourceTree = "<group>"; };
 		06EF4C2A17635E5600831826 /* greenBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenBG.png; sourceTree = "<group>"; };
 		06FD5D341763374D00F4B7B9 /* KBButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBButton.h; sourceTree = "<group>"; };
@@ -169,6 +173,8 @@
 		06F8AB54174BBEAA002D3607 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				06CA839F1763682F008BCE81 /* redBG.png */,
+				06CA83A01763682F008BCE81 /* yellowBG.png */,
 				06EF4C2A17635E5600831826 /* greenBG.png */,
 				06EF4C2817635D0F00831826 /* tmo.png */,
 			);
@@ -249,6 +255,8 @@
 				06C82FAE173DA879007E7C8C /* tsensors.plist in Resources */,
 				06EF4C2917635D0F00831826 /* tmo.png in Resources */,
 				06EF4C2B17635E5600831826 /* greenBG.png in Resources */,
+				06CA83A11763682F008BCE81 /* redBG.png in Resources */,
+				06CA83A21763682F008BCE81 /* yellowBG.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

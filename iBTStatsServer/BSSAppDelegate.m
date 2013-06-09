@@ -99,6 +99,24 @@
                 
                 //NSLog(@"Wrote %ld bytes", (long)bytes);
             }
+            
+            if (c_temp < 65) {
+                NSImage *windowBG = [NSImage imageNamed:@"greenBG.png"];
+                [[self.window contentView] setWantsLayer:YES];
+                [[self.window contentView] layer].contents = windowBG;
+            }
+            
+         else if (c_temp >= 65 && c_temp <79) {
+             NSImage *windowBG = [NSImage imageNamed:@"yellowBG.png"];
+             [[self.window contentView] setWantsLayer:YES];
+             [[self.window contentView] layer].contents = windowBG;
+         }
+         
+         else if (c_temp >= 80) {
+             NSImage *windowBG = [NSImage imageNamed:@"redBG.png"];
+             [[self.window contentView] setWantsLayer:YES];
+             [[self.window contentView] layer].contents = windowBG;
+         }
         } repeats:YES];
         
         [self.serviceNameTextField setEditable:NO];
