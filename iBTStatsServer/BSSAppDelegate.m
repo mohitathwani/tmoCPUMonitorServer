@@ -39,13 +39,13 @@
     [self.serviceNameTextField setBezeled:NO];
     [self.serviceNameTextField setDrawsBackground:NO];
 
-
 }
 
 #pragma mark NSNetServiceBrowser delegates
 
 - (void)netServiceBrowser:(NSNetServiceBrowser *)aNetServiceBrowser didFindService:(NSNetService *)aNetService moreComing:(BOOL)moreComing {
     
+    [self.connectButtonTimer invalidate];
     [self.services addObject:aNetService];
     NSLog(@"Services count: %ld", (unsigned long)[self.services count]);
     NSLog(@"%@",aNetService);
@@ -143,6 +143,27 @@
         [self.browser setDelegate:self];
         [self.browser searchForServicesOfType:@"_iPhoneSyncService._tcp." inDomain:@""];
         NSLog(@"Service Name: %@", self.serviceNameTextField.stringValue);
+        
+        [sender setTitle:@"Searching"];
+        
+        self.connectButtonTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 block:^(NSTimeInterval time) {
+            
+            if ([[sender title] isEqualToString:@"Searching"]) {
+                [sender setTitle:@"Searching ."];
+            }
+            
+            else if ([[sender title] isEqualToString:@"Searching ."]) {
+                [sender setTitle:@"Searching .."];
+            }
+            
+            else if ([[sender title] isEqualToString:@"Searching .."]) {
+                [sender setTitle:@"Searching ..."];
+            }
+            
+            else if ([[sender title] isEqualToString:@"Searching ..."]) {
+                [sender setTitle:@"Searching"];
+            }
+        } repeats:YES];
     }
     
     else if ([[sender title] isEqualToString:@"Stop"]) {

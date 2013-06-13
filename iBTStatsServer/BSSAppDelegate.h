@@ -24,6 +24,8 @@
 @property (assign) IBOutlet NSTextField *rpm2;
 @property (assign) IBOutlet NSTextField *serviceNameTextField;
 @property (assign) IBOutlet NSButton *connectButton;
+@property (nonatomic, retain) NSTimer *connectButtonTimer;
+
 - (IBAction)connectButtonPressed:(id)sender;
 
 @end
