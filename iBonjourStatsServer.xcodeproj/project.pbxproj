@@ -89,7 +89,7 @@
 		06C82F79173DA80F007E7C8C = {
 			isa = PBXGroup;
 			children = (
-				06FD5D331763374D00F4B7B9 /* KBButton */,
+				06CCF023176A48AB009676B8 /* Dependencies */,
 				06F8AB54174BBEAA002D3607 /* Images */,
 				06C82FB2173DA87E007E7C8C /* SMC */,
 				06C82F8B173DA80F007E7C8C /* iBonjourStatsServer */,
@@ -168,6 +168,14 @@
 				06C82FAB173DA879007E7C8C /* smcWrapper.m */,
 			);
 			name = SMC;
+			sourceTree = "<group>";
+		};
+		06CCF023176A48AB009676B8 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				06FD5D331763374D00F4B7B9 /* KBButton */,
+			);
+			name = Dependencies;
 			sourceTree = "<group>";
 		};
 		06F8AB54174BBEAA002D3607 /* Images */ = {
