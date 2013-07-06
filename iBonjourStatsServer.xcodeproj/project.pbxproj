@@ -413,6 +413,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iBTStatsServer/iBonjourStatsServer-Prefix.pch";
 				INFOPLIST_FILE = "iBTStatsServer/iBonjourStatsServer-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = iBonjourStatsServer;
 				WRAPPER_EXTENSION = app;
 			};
@@ -426,6 +427,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iBTStatsServer/iBonjourStatsServer-Prefix.pch";
 				INFOPLIST_FILE = "iBTStatsServer/iBonjourStatsServer-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = iBonjourStatsServer;
 				WRAPPER_EXTENSION = app;
 			};
