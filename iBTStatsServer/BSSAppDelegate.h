@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import "KBButton.h"
 
-@interface BSSAppDelegate : NSObject <NSApplicationDelegate, NSNetServiceBrowserDelegate>
+@interface BSSAppDelegate : NSObject <NSApplicationDelegate, NSNetServiceBrowserDelegate, NSTableViewDataSource, NSTableViewDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
 @property (assign) IBOutlet NSView *view;
@@ -25,6 +25,9 @@
 @property (assign) IBOutlet NSTextField *serviceNameTextField;
 @property (assign) IBOutlet NSButton *connectButton;
 @property (nonatomic, retain) NSTimer *connectButtonTimer;
+@property (assign) IBOutlet NSWindow *scanWindow;
+@property (assign) IBOutlet NSTableView *iphoneTableView;
+@property (assign) IBOutlet NSArrayController *arrayController;
 
 - (IBAction)connectButtonPressed:(id)sender;
 

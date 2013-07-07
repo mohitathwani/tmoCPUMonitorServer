@@ -38,6 +38,11 @@
     
     [self.serviceNameTextField setBezeled:NO];
     [self.serviceNameTextField setDrawsBackground:NO];
+    
+    self.iphoneTableView.dataSource = self;
+    self.iphoneTableView.delegate = self;
+    
+//    [self.arrayController addObject:@{@"iPhones": @"XYZ"}];
 
 }
 
@@ -47,6 +52,10 @@
     
     [self.connectButtonTimer invalidate];
     [self.services addObject:aNetService];
+    
+    for (id service in self.services) {
+        [self.arrayController addObject:@{@"iPhones": [NSString stringWithFormat:@"%@", [service name]]}];
+    }
     NSLog(@"Services count: %ld", (unsigned long)[self.services count]);
     NSLog(@"%@",aNetService);
     [aNetService resolveWithTimeout:5.0];
@@ -136,6 +145,9 @@
 
 - (IBAction)connectButtonPressed:(id)sender {
     
+    [NSApp beginSheet:self.scanWindow modalForWindow:self.window modalDelegate:self didEndSelector:nil contextInfo:nil];
+    [self.iphoneTableView reloadData];
+    
     if (![self.serviceNameTextField.stringValue isEqualToString:EMPTY_STRING] && [[sender title] isEqualToString:@"Connect"]) {
 //        self.connectButton.enabled = !self.connectButton.isEnabled;
         self.browser = [[NSNetServiceBrowser alloc] init];
@@ -174,4 +186,18 @@
     }
 
 }
+
+- (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView {
+    return [self.services count];
+}
+
+- (id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex {
+    return [@[@1,@2,@3] objectAtIndex:rowIndex];
+    
+}
+
+- (void)tableView:(NSTableView *)aTableView setObjectValue:(id)anObject forTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex {
+    
+}
+
 @end
