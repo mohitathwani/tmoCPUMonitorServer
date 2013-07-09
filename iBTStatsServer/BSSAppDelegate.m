@@ -50,15 +50,15 @@
 
 - (void)netServiceBrowser:(NSNetServiceBrowser *)aNetServiceBrowser didFindService:(NSNetService *)aNetService moreComing:(BOOL)moreComing {
     
-    [self.connectButtonTimer invalidate];
-    [self.services addObject:aNetService];
+//    [self.connectButtonTimer invalidate];
+//    [self.services addObject:aNetService];
     
-    for (id service in self.services) {
-        [self.arrayController addObject:@{@"iPhones": [NSString stringWithFormat:@"%@", [service name]]}];
-    }
-    NSLog(@"Services count: %ld", (unsigned long)[self.services count]);
+//    for (id service in self.services) {
+        [self.arrayController addObject:@{@"iPhones": [NSString stringWithFormat:@"%@", [aNetService name]]}];
+//    }
+//    NSLog(@"Services count: %ld", (unsigned long)[self.services count]);
     NSLog(@"%@",aNetService);
-    [aNetService resolveWithTimeout:5.0];
+/*    [aNetService resolveWithTimeout:5.0];
     
     NSString *serviceNameString = [NSString stringWithFormat:@"%@", aNetService];
     if ([serviceNameString rangeOfString:self.serviceNameTextField.stringValue].location == NSNotFound) {
@@ -131,7 +131,7 @@
         [self.serviceNameTextField setEditable:NO];
         //self.connectButton.enabled = !self.connectButton.isEnabled;
         [self.connectButton setTitle:@"Stop"];
-    }
+    }*/
     
 
 
@@ -147,15 +147,16 @@
     
     [NSApp beginSheet:self.scanWindow modalForWindow:self.window modalDelegate:self didEndSelector:@selector(sheetDidEnd:returnCode:contextInfo:) contextInfo:nil];
     [self.iphoneTableView reloadData];
+
     
 //    if (![self.serviceNameTextField.stringValue isEqualToString:EMPTY_STRING] && [[sender title] isEqualToString:@"Connect"]) {
 ////        self.connectButton.enabled = !self.connectButton.isEnabled;
-//        self.browser = [[NSNetServiceBrowser alloc] init];
-//        self.services = [[NSMutableArray array] retain];
-//        [self.browser setDelegate:self];
-//        [self.browser searchForServicesOfType:@"_iPhoneSyncService._tcp." inDomain:@""];
-//        NSLog(@"Service Name: %@", self.serviceNameTextField.stringValue);
-//        
+        self.browser = [[NSNetServiceBrowser alloc] init];
+        self.services = [[NSMutableArray array] retain];
+        [self.browser setDelegate:self];
+        [self.browser searchForServicesOfType:@"_iPhoneSyncService._tcp." inDomain:@""];
+        NSLog(@"Service Name: %@", self.serviceNameTextField.stringValue);
+//
 //        [sender setTitle:@"Searching"];
 //        
 //        self.connectButtonTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 block:^(NSTimeInterval time) {
@@ -195,6 +196,7 @@
     if( returnCode == NSAlertDefaultReturn )
     {
         NSLog(@"Initiate connection here");
+
     }
 }
 
@@ -210,7 +212,11 @@
  Close scan sheet without choosing any device
  */
 - (IBAction)cancelButtonPressed:(id)sender {
-    
+
+    [self.browser stop];
+    NSRange range = NSMakeRange(0, [[self.arrayController arrangedObjects] count]);
+    [self.arrayController removeObjectsAtArrangedObjectIndexes:[NSIndexSet indexSetWithIndexesInRange:range]];
+    [self.services removeAllObjects];
     [NSApp endSheet:self.scanWindow returnCode:NSAlertAlternateReturn];
     [self.scanWindow orderOut:self];
 
