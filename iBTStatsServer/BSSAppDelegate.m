@@ -145,45 +145,74 @@
 
 - (IBAction)connectButtonPressed:(id)sender {
     
-    [NSApp beginSheet:self.scanWindow modalForWindow:self.window modalDelegate:self didEndSelector:nil contextInfo:nil];
+    [NSApp beginSheet:self.scanWindow modalForWindow:self.window modalDelegate:self didEndSelector:@selector(sheetDidEnd:returnCode:contextInfo:) contextInfo:nil];
     [self.iphoneTableView reloadData];
     
-    if (![self.serviceNameTextField.stringValue isEqualToString:EMPTY_STRING] && [[sender title] isEqualToString:@"Connect"]) {
-//        self.connectButton.enabled = !self.connectButton.isEnabled;
-        self.browser = [[NSNetServiceBrowser alloc] init];
-        self.services = [[NSMutableArray array] retain];
-        [self.browser setDelegate:self];
-        [self.browser searchForServicesOfType:@"_iPhoneSyncService._tcp." inDomain:@""];
-        NSLog(@"Service Name: %@", self.serviceNameTextField.stringValue);
-        
-        [sender setTitle:@"Searching"];
-        
-        self.connectButtonTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 block:^(NSTimeInterval time) {
-            
-            if ([[sender title] isEqualToString:@"Searching"]) {
-                [sender setTitle:@"Searching ."];
-            }
-            
-            else if ([[sender title] isEqualToString:@"Searching ."]) {
-                [sender setTitle:@"Searching .."];
-            }
-            
-            else if ([[sender title] isEqualToString:@"Searching .."]) {
-                [sender setTitle:@"Searching ..."];
-            }
-            
-            else if ([[sender title] isEqualToString:@"Searching ..."]) {
-                [sender setTitle:@"Searching"];
-            }
-        } repeats:YES];
+//    if (![self.serviceNameTextField.stringValue isEqualToString:EMPTY_STRING] && [[sender title] isEqualToString:@"Connect"]) {
+////        self.connectButton.enabled = !self.connectButton.isEnabled;
+//        self.browser = [[NSNetServiceBrowser alloc] init];
+//        self.services = [[NSMutableArray array] retain];
+//        [self.browser setDelegate:self];
+//        [self.browser searchForServicesOfType:@"_iPhoneSyncService._tcp." inDomain:@""];
+//        NSLog(@"Service Name: %@", self.serviceNameTextField.stringValue);
+//        
+//        [sender setTitle:@"Searching"];
+//        
+//        self.connectButtonTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 block:^(NSTimeInterval time) {
+//            
+//            if ([[sender title] isEqualToString:@"Searching"]) {
+//                [sender setTitle:@"Searching ."];
+//            }
+//            
+//            else if ([[sender title] isEqualToString:@"Searching ."]) {
+//                [sender setTitle:@"Searching .."];
+//            }
+//            
+//            else if ([[sender title] isEqualToString:@"Searching .."]) {
+//                [sender setTitle:@"Searching ..."];
+//            }
+//            
+//            else if ([[sender title] isEqualToString:@"Searching ..."]) {
+//                [sender setTitle:@"Searching"];
+//            }
+//        } repeats:YES];
+//    }
+//    
+//    else if ([[sender title] isEqualToString:@"Stop"]) {
+//        [self.services removeAllObjects];
+//        [sender setTitle:@"Connect"];
+//        [self.serviceNameTextField setEditable:YES];
+//        
+//    }
+
+}
+
+/*
+ This method is called when Scan sheet is closed. Initiate connection to selected heart rate peripheral
+ */
+- (void)sheetDidEnd:(NSWindow *)sheet returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo
+{
+    if( returnCode == NSAlertDefaultReturn )
+    {
+        NSLog(@"Initiate connection here");
     }
+}
+
+/*
+ Close scan sheet once device is selected
+ */
+- (IBAction)closeScanSheet:(id)sender
+{
+    [NSApp endSheet:self.scanWindow returnCode:NSAlertDefaultReturn];
+    [self.scanWindow orderOut:self];
+}
+/*
+ Close scan sheet without choosing any device
+ */
+- (IBAction)cancelButtonPressed:(id)sender {
     
-    else if ([[sender title] isEqualToString:@"Stop"]) {
-        [self.services removeAllObjects];
-        [sender setTitle:@"Connect"];
-        [self.serviceNameTextField setEditable:YES];
-        
-    }
+    [NSApp endSheet:self.scanWindow returnCode:NSAlertAlternateReturn];
+    [self.scanWindow orderOut:self];
 
 }
 

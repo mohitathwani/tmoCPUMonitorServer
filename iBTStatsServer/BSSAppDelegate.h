@@ -30,5 +30,7 @@
 @property (assign) IBOutlet NSArrayController *arrayController;
 
 - (IBAction)connectButtonPressed:(id)sender;
+- (IBAction)cancelButtonPressed:(id)sender;
+- (IBAction)closeScanSheet:(id)sender;
 
 @end
