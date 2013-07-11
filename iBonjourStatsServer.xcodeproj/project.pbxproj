@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0671F0BA178F3904002BD17D /* iconMac.iconset in Resources */ = {isa = PBXBuildFile; fileRef = 0671F0B9178F3904002BD17D /* iconMac.iconset */; };
 		06C82F86173DA80F007E7C8C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06C82F85173DA80F007E7C8C /* Cocoa.framework */; };
 		06C82F90173DA80F007E7C8C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 06C82F8E173DA80F007E7C8C /* InfoPlist.strings */; };
 		06C82F92173DA80F007E7C8C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C82F91173DA80F007E7C8C /* main.m */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0671F0B9178F3904002BD17D /* iconMac.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = iconMac.iconset; sourceTree = "<group>"; };
 		06C82F82173DA80F007E7C8C /* iBonjourStatsServer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBonjourStatsServer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06C82F85173DA80F007E7C8C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		06C82F88173DA80F007E7C8C /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -89,6 +91,7 @@
 		06C82F79173DA80F007E7C8C = {
 			isa = PBXGroup;
 			children = (
+				0671F0B9178F3904002BD17D /* iconMac.iconset */,
 				06CCF023176A48AB009676B8 /* Dependencies */,
 				06F8AB54174BBEAA002D3607 /* Images */,
 				06C82FB2173DA87E007E7C8C /* SMC */,
@@ -265,6 +268,7 @@
 				06EF4C2B17635E5600831826 /* greenBG.png in Resources */,
 				06CA83A11763682F008BCE81 /* redBG.png in Resources */,
 				06CA83A21763682F008BCE81 /* yellowBG.png in Resources */,
+				0671F0BA178F3904002BD17D /* iconMac.iconset in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
