@@ -28,6 +28,8 @@
 @property (assign) IBOutlet NSWindow *scanWindow;
 @property (assign) IBOutlet NSTableView *iphoneTableView;
 @property (assign) IBOutlet NSArrayController *arrayController;
+@property (nonatomic) NSInteger selectedRow;
+@property (nonatomic, retain) NSNetService *service;
 
 - (IBAction)connectButtonPressed:(id)sender;
 - (IBAction)cancelButtonPressed:(id)sender;

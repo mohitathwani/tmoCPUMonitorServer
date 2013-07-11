@@ -51,87 +51,16 @@
 - (void)netServiceBrowser:(NSNetServiceBrowser *)aNetServiceBrowser didFindService:(NSNetService *)aNetService moreComing:(BOOL)moreComing {
     
 //    [self.connectButtonTimer invalidate];
-//    [self.services addObject:aNetService];
+    [self.services addObject:aNetService];
     
 //    for (id service in self.services) {
         [self.arrayController addObject:@{@"iPhones": [NSString stringWithFormat:@"%@", [aNetService name]]}];
 //    }
 //    NSLog(@"Services count: %ld", (unsigned long)[self.services count]);
     NSLog(@"%@",aNetService);
-/*    [aNetService resolveWithTimeout:5.0];
     
-    NSString *serviceNameString = [NSString stringWithFormat:@"%@", aNetService];
-    if ([serviceNameString rangeOfString:self.serviceNameTextField.stringValue].location == NSNotFound) {
-        NSLog(@"string does not contain bla");
-//        self.connectButton.enabled = !self.connectButton.isEnabled;
-        [self.services removeAllObjects];
-    } else {
-        NSLog(@"string contains bla!");
-        
-        [NSTimer scheduledTimerWithTimeInterval:1.0 block:^(NSTimeInterval time) {
-            float c_temp=[smcWrapper get_maintemp];
-            self.cpuTemp = [NSNumber numberWithFloat:c_temp];
-            //printf("%f\n",c_temp);
-            
-            [self.fanSpeeds removeAllObjects];
-            int i;
-            for(i=0;i<[smcWrapper get_fan_num];i++){
-                int x = [smcWrapper get_fan_rpm:i];
-                [self.fanSpeeds addObject: [NSNumber numberWithInt:x]];
-                
-            }
-            
-            self.infoDictionary = [NSDictionary dictionaryWithObjectsAndKeys:self.cpuTemp,@"cpuTemp",self.fanSpeeds,@"fanSpeeds", nil];
-            
-            [self.cpuTempField setStringValue: [NSString stringWithFormat:@"%@",self.cpuTemp]];
-            
-            if ([self.fanSpeeds count] == 2) {
-                [self.fanSpeed1 setStringValue: [NSString stringWithFormat:@"%@",[self.fanSpeeds objectAtIndex:0]]];
-                [self.fanSpeed2 setStringValue: [NSString stringWithFormat:@"%@",[self.fanSpeeds objectAtIndex:1]]];
-            }
-            
-            else {
-                [self.fanSpeed2 setHidden:YES];
-                [self.rpm2 setHidden:YES];
-            }
-            
-            NSData *appData = [NSKeyedArchiver archivedDataWithRootObject:self.infoDictionary];
-            //        NSDictionary *myDictionary = (NSDictionary*) [NSKeyedUnarchiver unarchiveObjectWithData:appData];
-            //        NSLog(@"%@", myDictionary);
-            NSNetService *service = [self.services objectAtIndex: 0];
-            if(service) {
-                NSOutputStream *outStream;
-                [service getInputStream:nil outputStream:&outStream];
-                [outStream open];
-                NSInteger bytes = [outStream write:[appData bytes] maxLength: [appData length]];
-                [outStream close];
-                
-                //NSLog(@"Wrote %ld bytes", (long)bytes);
-            }
-            
-            if (c_temp < 65) {
-                NSImage *windowBG = [NSImage imageNamed:@"greenBG.png"];
-                [[self.window contentView] setWantsLayer:YES];
-                [[self.window contentView] layer].contents = windowBG;
-            }
-            
-         else if (c_temp >= 65 && c_temp <79) {
-             NSImage *windowBG = [NSImage imageNamed:@"yellowBG.png"];
-             [[self.window contentView] setWantsLayer:YES];
-             [[self.window contentView] layer].contents = windowBG;
-         }
-         
-         else if (c_temp >= 80) {
-             NSImage *windowBG = [NSImage imageNamed:@"redBG.png"];
-             [[self.window contentView] setWantsLayer:YES];
-             [[self.window contentView] layer].contents = windowBG;
-         }
-        } repeats:YES];
-        
-        [self.serviceNameTextField setEditable:NO];
-        //self.connectButton.enabled = !self.connectButton.isEnabled;
-        [self.connectButton setTitle:@"Stop"];
-    }*/
+    [aNetService resolveWithTimeout:5.0];
+
     
 
 
@@ -148,11 +77,12 @@
 
 - (IBAction)connectButtonPressed:(id)sender {
     
-    [NSApp beginSheet:self.scanWindow modalForWindow:self.window modalDelegate:self didEndSelector:@selector(sheetDidEnd:returnCode:contextInfo:) contextInfo:nil];
-    [self.iphoneTableView reloadData];
+
 
     
-//    if (![self.serviceNameTextField.stringValue isEqualToString:EMPTY_STRING] && [[sender title] isEqualToString:@"Connect"]) {
+    if ([[sender title] isEqualToString:@"Search"]) {
+        [NSApp beginSheet:self.scanWindow modalForWindow:self.window modalDelegate:self didEndSelector:@selector(sheetDidEnd:returnCode:contextInfo:) contextInfo:nil];
+        [self.iphoneTableView reloadData];
 ////        self.connectButton.enabled = !self.connectButton.isEnabled;
         self.browser = [[NSNetServiceBrowser alloc] init];
         self.services = [[NSMutableArray array] retain];
@@ -180,14 +110,15 @@
 //                [sender setTitle:@"Searching"];
 //            }
 //        } repeats:YES];
-//    }
-//    
-//    else if ([[sender title] isEqualToString:@"Stop"]) {
-//        [self.services removeAllObjects];
-//        [sender setTitle:@"Connect"];
-//        [self.serviceNameTextField setEditable:YES];
-//        
-//    }
+    }
+//
+    else if ([[sender title] isEqualToString:@"Stop"]) {
+        self.service = nil;
+        [self.services removeAllObjects];
+        [sender setTitle:@"Search"];
+        [self.serviceNameTextField setEditable:YES];
+        
+    }
 
 }
 
@@ -198,9 +129,76 @@
 {
     if( returnCode == NSAlertDefaultReturn )
     {
-        NSLog(@"Initiate connection here");
+        NSLog(@"Initiate connection here : %ld", (long)self.selectedRow);
+         
+         [NSTimer scheduledTimerWithTimeInterval:1.0 block:^(NSTimeInterval time) {
+         float c_temp=[smcWrapper get_maintemp];
+         self.cpuTemp = [NSNumber numberWithFloat:c_temp];
+         //printf("%f\n",c_temp);
+         
+         [self.fanSpeeds removeAllObjects];
+         int i;
+         for(i=0;i<[smcWrapper get_fan_num];i++){
+         int x = [smcWrapper get_fan_rpm:i];
+         [self.fanSpeeds addObject: [NSNumber numberWithInt:x]];
+         
+         }
+         
+         self.infoDictionary = [NSDictionary dictionaryWithObjectsAndKeys:self.cpuTemp,@"cpuTemp",self.fanSpeeds,@"fanSpeeds", nil];
+         
+         [self.cpuTempField setStringValue: [NSString stringWithFormat:@"%@",self.cpuTemp]];
+         
+         if ([self.fanSpeeds count] == 2) {
+         [self.fanSpeed1 setStringValue: [NSString stringWithFormat:@"%@",[self.fanSpeeds objectAtIndex:0]]];
+         [self.fanSpeed2 setStringValue: [NSString stringWithFormat:@"%@",[self.fanSpeeds objectAtIndex:1]]];
+         }
+         
+         else {
+         [self.fanSpeed2 setHidden:YES];
+         [self.rpm2 setHidden:YES];
+         }
+         
+         NSData *appData = [NSKeyedArchiver archivedDataWithRootObject:self.infoDictionary];
+         //        NSDictionary *myDictionary = (NSDictionary*) [NSKeyedUnarchiver unarchiveObjectWithData:appData];
+         //        NSLog(@"%@", myDictionary);
+         self.service = [self.services objectAtIndex: self.selectedRow];
+         if(self.service) {
+             self.serviceNameTextField.stringValue = [self.service name];
+         NSOutputStream *outStream;
+         [self.service getInputStream:nil outputStream:&outStream];
+         [outStream open];
+         NSInteger bytes = [outStream write:[appData bytes] maxLength: [appData length]];
+         [outStream close];
+         
+         //NSLog(@"Wrote %ld bytes", (long)bytes);
+         }
+         
+         if (c_temp < 65) {
+         NSImage *windowBG = [NSImage imageNamed:@"greenBG.png"];
+         [[self.window contentView] setWantsLayer:YES];
+         [[self.window contentView] layer].contents = windowBG;
+         }
+         
+         else if (c_temp >= 65 && c_temp <79) {
+         NSImage *windowBG = [NSImage imageNamed:@"yellowBG.png"];
+         [[self.window contentView] setWantsLayer:YES];
+         [[self.window contentView] layer].contents = windowBG;
+         }
+         
+         else if (c_temp >= 80) {
+         NSImage *windowBG = [NSImage imageNamed:@"redBG.png"];
+         [[self.window contentView] setWantsLayer:YES];
+         [[self.window contentView] layer].contents = windowBG;
+         }
+         } repeats:YES];
+         
+         [self.serviceNameTextField setEditable:NO];
+         //self.connectButton.enabled = !self.connectButton.isEnabled;
+         [self.connectButton setTitle:@"Stop"];
+         }
+        
 
-    }
+    
 }
 
 /*
@@ -210,6 +208,7 @@
 {
     [NSApp endSheet:self.scanWindow returnCode:NSAlertDefaultReturn];
     [self.scanWindow orderOut:self];
+    self.selectedRow = [self.iphoneTableView selectedRow];
 }
 /*
  Close scan sheet without choosing any device
