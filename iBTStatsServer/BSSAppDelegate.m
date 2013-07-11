@@ -139,7 +139,10 @@
 }
 
 - (void)netServiceBrowser:(NSNetServiceBrowser *)aNetServiceBrowser didRemoveService:(NSNetService *)aNetService moreComing:(BOOL)moreComing {
-    [self.services removeObject:aNetService];
+//    NSUInteger index = [self.services indexOfObject:aNetService];
+//    [self.services removeObject:aNetService];
+    [self.arrayController removeObject:@{@"iPhones":[aNetService name]}];
+//    [self.iphoneTableView reloadData];
 //    self.connectButton.enabled = !self.connectButton.isEnabled;
 }
 
