@@ -76,19 +76,16 @@
 }
 
 - (IBAction)connectButtonPressed:(id)sender {
-    
-
-
-    
+        
     if ([[sender title] isEqualToString:@"Search"]) {
         [NSApp beginSheet:self.scanWindow modalForWindow:self.window modalDelegate:self didEndSelector:@selector(sheetDidEnd:returnCode:contextInfo:) contextInfo:nil];
-        [self.iphoneTableView reloadData];
+//        [self.iphoneTableView reloadData];
 ////        self.connectButton.enabled = !self.connectButton.isEnabled;
         self.browser = [[NSNetServiceBrowser alloc] init];
-        self.services = [[NSMutableArray array] retain];
+        self.services = [[NSMutableArray alloc] init];
         [self.browser setDelegate:self];
         [self.browser searchForServicesOfType:@"_iPhoneSyncService._tcp." inDomain:@""];
-        NSLog(@"Service Name: %@", self.serviceNameTextField.stringValue);
+//        NSLog(@"Service Name: %@", self.serviceNameTextField.stringValue);
 //
 //        [sender setTitle:@"Searching"];
 //        
@@ -114,9 +111,16 @@
 //
     else if ([[sender title] isEqualToString:@"Stop"]) {
         self.service = nil;
-        [self.services removeAllObjects];
+        [self.browser stop];
+        
         [sender setTitle:@"Search"];
         [self.serviceNameTextField setEditable:YES];
+        [self.dataTransmitTimer invalidate];
+        
+        NSRange range = NSMakeRange(0, [[self.arrayController arrangedObjects] count]);
+        [self.arrayController removeObjectsAtArrangedObjectIndexes:[NSIndexSet indexSetWithIndexesInRange:range]];
+
+        [self.services removeAllObjects];
         
     }
 
@@ -131,7 +135,7 @@
     {
         NSLog(@"Initiate connection here : %ld", (long)self.selectedRow);
          
-         [NSTimer scheduledTimerWithTimeInterval:1.0 block:^(NSTimeInterval time) {
+         self.dataTransmitTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 block:^(NSTimeInterval time) {
          float c_temp=[smcWrapper get_maintemp];
          self.cpuTemp = [NSNumber numberWithFloat:c_temp];
          //printf("%f\n",c_temp);
@@ -208,6 +212,10 @@
 {
     [NSApp endSheet:self.scanWindow returnCode:NSAlertDefaultReturn];
     [self.scanWindow orderOut:self];
+    
+//    NSRange range = NSMakeRange(0, [[self.arrayController arrangedObjects] count]);
+//    [self.arrayController removeObjectsAtArrangedObjectIndexes:[NSIndexSet indexSetWithIndexesInRange:range]];
+    
     self.selectedRow = [self.iphoneTableView selectedRow];
 }
 /*
@@ -230,6 +238,7 @@
 
 - (id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex {
     return [@[@1,@2,@3] objectAtIndex:rowIndex];
+//    return TRUE;
     
 }
 

@@ -25,6 +25,7 @@
 @property (assign) IBOutlet NSTextField *serviceNameTextField;
 @property (assign) IBOutlet NSButton *connectButton;
 @property (nonatomic, retain) NSTimer *connectButtonTimer;
+@property (nonatomic, retain) NSTimer *dataTransmitTimer;
 @property (assign) IBOutlet NSWindow *scanWindow;
 @property (assign) IBOutlet NSTableView *iphoneTableView;
 @property (assign) IBOutlet NSArrayController *arrayController;
