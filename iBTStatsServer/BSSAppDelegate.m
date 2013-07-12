@@ -71,6 +71,11 @@
 //    NSUInteger index = [self.services indexOfObject:aNetService];
 //    [self.services removeObject:aNetService];
     [self.arrayController removeObject:@{@"iPhones":[aNetService name]}];
+    self.service = nil;
+    [self.browser stop];
+    [self.services removeAllObjects];
+//    self.services = nil;
+    [self.connectButton setTitle:@"Search"];
 //    [self.iphoneTableView reloadData];
 //    self.connectButton.enabled = !self.connectButton.isEnabled;
 }
@@ -158,7 +163,9 @@
          }
          
          else {
-         [self.fanSpeed2 setHidden:YES];
+//         [self.fanSpeed2 setHidden:YES];
+         [self.fanSpeed1 setStringValue: [NSString stringWithFormat:@"%@",[self.fanSpeeds objectAtIndex:0]]];
+
          [self.rpm2 setHidden:YES];
          }
          
