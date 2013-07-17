@@ -89,7 +89,7 @@
         self.browser = [[NSNetServiceBrowser alloc] init];
         self.services = [[NSMutableArray alloc] init];
         [self.browser setDelegate:self];
-        [self.browser searchForServicesOfType:@"_iPhoneSyncService._tcp." inDomain:@""];
+        [self.browser searchForServicesOfType:@"_tmoCPUMon._tcp." inDomain:@""];
 //        NSLog(@"Service Name: %@", self.serviceNameTextField.stringValue);
 //
 //        [sender setTitle:@"Searching"];
