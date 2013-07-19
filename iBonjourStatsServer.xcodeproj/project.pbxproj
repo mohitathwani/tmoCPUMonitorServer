@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0671F0BA178F3904002BD17D /* iconMac.iconset in Resources */ = {isa = PBXBuildFile; fileRef = 0671F0B9178F3904002BD17D /* iconMac.iconset */; };
+		06BF1BC11799C3C100D2921B /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06BF1BC01799C3C100D2921B /* Sparkle.framework */; };
+		06BF1BC41799C50600D2921B /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 06BF1BC01799C3C100D2921B /* Sparkle.framework */; };
+		06BF1BC61799C6C100D2921B /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 06BF1BC51799C6C100D2921B /* dsa_pub.pem */; };
 		06C82F86173DA80F007E7C8C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06C82F85173DA80F007E7C8C /* Cocoa.framework */; };
 		06C82F90173DA80F007E7C8C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 06C82F8E173DA80F007E7C8C /* InfoPlist.strings */; };
 		06C82F92173DA80F007E7C8C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C82F91173DA80F007E7C8C /* main.m */; };
@@ -32,8 +35,23 @@
 		3AE8700F2AD543F4B04EC781 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F2F41ACF49764479ACD44AD8 /* libPods.a */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		06BF1BC31799C4FD00D2921B /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				06BF1BC41799C50600D2921B /* Sparkle.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0671F0B9178F3904002BD17D /* iconMac.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = iconMac.iconset; sourceTree = "<group>"; };
+		06BF1BC01799C3C100D2921B /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
+		06BF1BC51799C6C100D2921B /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		06C82F82173DA80F007E7C8C /* iBonjourStatsServer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBonjourStatsServer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06C82F85173DA80F007E7C8C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		06C82F88173DA80F007E7C8C /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -82,6 +100,7 @@
 				06C82FB4173DA893007E7C8C /* Security.framework in Frameworks */,
 				06C82F86173DA80F007E7C8C /* Cocoa.framework in Frameworks */,
 				3AE8700F2AD543F4B04EC781 /* libPods.a in Frameworks */,
+				06BF1BC11799C3C100D2921B /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +132,7 @@
 		06C82F84173DA80F007E7C8C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				06BF1BC01799C3C100D2921B /* Sparkle.framework */,
 				06C82FB5173DA89E007E7C8C /* IOKit.framework */,
 				06C82FB3173DA893007E7C8C /* Security.framework */,
 				06C82F85173DA80F007E7C8C /* Cocoa.framework */,
@@ -147,6 +167,7 @@
 		06C82F8C173DA80F007E7C8C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				06BF1BC51799C6C100D2921B /* dsa_pub.pem */,
 				06C82F8D173DA80F007E7C8C /* iBonjourStatsServer-Info.plist */,
 				06C82F8E173DA80F007E7C8C /* InfoPlist.strings */,
 				06C82F91173DA80F007E7C8C /* main.m */,
@@ -217,6 +238,7 @@
 				06C82F7F173DA80F007E7C8C /* Frameworks */,
 				06C82F80173DA80F007E7C8C /* Resources */,
 				40EDC1F11CDA4EC0BB52B313 /* Copy Pods Resources */,
+				06BF1BC31799C4FD00D2921B /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -269,6 +291,7 @@
 				06CA83A11763682F008BCE81 /* redBG.png in Resources */,
 				06CA83A21763682F008BCE81 /* yellowBG.png in Resources */,
 				0671F0BA178F3904002BD17D /* iconMac.iconset in Resources */,
+				06BF1BC61799C6C100D2921B /* dsa_pub.pem in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +437,10 @@
 			baseConfigurationReference = CA95B4DCEA624F9082D1D3A3 /* Pods.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iBTStatsServer/iBonjourStatsServer-Prefix.pch";
 				INFOPLIST_FILE = "iBTStatsServer/iBonjourStatsServer-Info.plist";
@@ -428,6 +455,10 @@
 			baseConfigurationReference = CA95B4DCEA624F9082D1D3A3 /* Pods.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iBTStatsServer/iBonjourStatsServer-Prefix.pch";
 				INFOPLIST_FILE = "iBTStatsServer/iBonjourStatsServer-Info.plist";
