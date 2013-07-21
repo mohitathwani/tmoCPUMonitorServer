@@ -165,8 +165,6 @@
          else {
 //         [self.fanSpeed2 setHidden:YES];
          [self.fanSpeed1 setStringValue: [NSString stringWithFormat:@"%@",[self.fanSpeeds objectAtIndex:0]]];
-
-         [self.rpm2 setHidden:YES];
          }
          
          NSData *appData = [NSKeyedArchiver archivedDataWithRootObject:self.infoDictionary];
