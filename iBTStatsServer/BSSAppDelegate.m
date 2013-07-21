@@ -10,10 +10,9 @@
 #import "smcWrapper.h"
 #import "NSTimer+BlocksKit.h"
 
-#define EMPTY_STRING @""
-
 @implementation BSSAppDelegate
 
+#pragma mark Standard App code
 - (void)dealloc
 {
     [super dealloc];
@@ -26,14 +25,11 @@
     [smcWrapper init];
     
     self.fanSpeeds = [[NSMutableArray alloc] init];
-    
-//    [self.window setBackgroundColor:[NSColor colorWithPatternImage:[NSImage imageNamed:@"greenBG.png"]]];
-    
+        
     NSImage *windowBG = [NSImage imageNamed:@"greenBG.png"];
     [[self.window contentView] setWantsLayer:YES];
     [[self.window contentView] layer].contents = windowBG;
     
-//    [[self.connectButton cell] setBackgroundColor:[NSColor colorWithPatternImage:[NSImage imageNamed:@"button.png"]]];
     [[self.connectButton cell] setKBButtonType:BButtonTypeInverse];
     
     [self.serviceNameTextField setBezeled:NO];
@@ -41,79 +37,43 @@
     
     self.iphoneTableView.dataSource = self;
     self.iphoneTableView.delegate = self;
-    
-//    [self.arrayController addObject:@{@"iPhones": @"XYZ"}];
-
 }
 
 #pragma mark NSNetServiceBrowser delegates
 
+/**
+ * Called when the browser finds a service(s)
+ */
 - (void)netServiceBrowser:(NSNetServiceBrowser *)aNetServiceBrowser didFindService:(NSNetService *)aNetService moreComing:(BOOL)moreComing {
     
-//    [self.connectButtonTimer invalidate];
     [self.services addObject:aNetService];
     
-//    for (id service in self.services) {
-        [self.arrayController addObject:@{@"iPhones": [NSString stringWithFormat:@"%@", [aNetService name]]}];
-//    }
-//    NSLog(@"Services count: %ld", (unsigned long)[self.services count]);
+    [self.arrayController addObject:@{@"iPhones": [NSString stringWithFormat:@"%@", [aNetService name]]}];
     NSLog(@"%@",aNetService);
     
     [aNetService resolveWithTimeout:5.0];
-
-    
-
-
-    
 }
 
+/**
+ * Called when the browser looses/removes a service
+ */
 - (void)netServiceBrowser:(NSNetServiceBrowser *)aNetServiceBrowser didRemoveService:(NSNetService *)aNetService moreComing:(BOOL)moreComing {
-//    NSUInteger index = [self.services indexOfObject:aNetService];
-//    [self.services removeObject:aNetService];
     [self.arrayController removeObject:@{@"iPhones":[aNetService name]}];
     self.service = nil;
     [self.browser stop];
     [self.services removeAllObjects];
-//    self.services = nil;
     [self.connectButton setTitle:@"Search"];
-//    [self.iphoneTableView reloadData];
-//    self.connectButton.enabled = !self.connectButton.isEnabled;
 }
 
 - (IBAction)connectButtonPressed:(id)sender {
         
     if ([[sender title] isEqualToString:@"Search"]) {
         [NSApp beginSheet:self.scanWindow modalForWindow:self.window modalDelegate:self didEndSelector:@selector(sheetDidEnd:returnCode:contextInfo:) contextInfo:nil];
-//        [self.iphoneTableView reloadData];
-////        self.connectButton.enabled = !self.connectButton.isEnabled;
         self.browser = [[NSNetServiceBrowser alloc] init];
         self.services = [[NSMutableArray alloc] init];
         [self.browser setDelegate:self];
         [self.browser searchForServicesOfType:@"_tmoCPUMon._tcp." inDomain:@""];
-//        NSLog(@"Service Name: %@", self.serviceNameTextField.stringValue);
-//
-//        [sender setTitle:@"Searching"];
-//        
-//        self.connectButtonTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 block:^(NSTimeInterval time) {
-//            
-//            if ([[sender title] isEqualToString:@"Searching"]) {
-//                [sender setTitle:@"Searching ."];
-//            }
-//            
-//            else if ([[sender title] isEqualToString:@"Searching ."]) {
-//                [sender setTitle:@"Searching .."];
-//            }
-//            
-//            else if ([[sender title] isEqualToString:@"Searching .."]) {
-//                [sender setTitle:@"Searching ..."];
-//            }
-//            
-//            else if ([[sender title] isEqualToString:@"Searching ..."]) {
-//                [sender setTitle:@"Searching"];
-//            }
-//        } repeats:YES];
     }
-//
     else if ([[sender title] isEqualToString:@"Stop"]) {
         self.service = nil;
         [self.browser stop];
@@ -132,7 +92,7 @@
 }
 
 /*
- This method is called when Scan sheet is closed. Initiate connection to selected heart rate peripheral
+ This method is called when Scan sheet is closed. Initiate connection to selected service
  */
 - (void)sheetDidEnd:(NSWindow *)sheet returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo
 {
@@ -143,7 +103,6 @@
          self.dataTransmitTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 block:^(NSTimeInterval time) {
          float c_temp=[smcWrapper get_maintemp];
          self.cpuTemp = [NSNumber numberWithFloat:c_temp];
-         //printf("%f\n",c_temp);
          
          [self.fanSpeeds removeAllObjects];
          int i;
@@ -163,13 +122,10 @@
          }
          
          else {
-//         [self.fanSpeed2 setHidden:YES];
          [self.fanSpeed1 setStringValue: [NSString stringWithFormat:@"%@",[self.fanSpeeds objectAtIndex:0]]];
          }
          
          NSData *appData = [NSKeyedArchiver archivedDataWithRootObject:self.infoDictionary];
-         //        NSDictionary *myDictionary = (NSDictionary*) [NSKeyedUnarchiver unarchiveObjectWithData:appData];
-         //        NSLog(@"%@", myDictionary);
          self.service = [self.services objectAtIndex: self.selectedRow];
          if(self.service) {
              self.serviceNameTextField.stringValue = [self.service name];
@@ -179,7 +135,7 @@
          NSInteger bytes = [outStream write:[appData bytes] maxLength: [appData length]];
          [outStream close];
          
-         //NSLog(@"Wrote %ld bytes", (long)bytes);
+         NSLog(@"Wrote %ld bytes", (long)bytes);
          }
          
          if (c_temp < 65) {
@@ -202,12 +158,8 @@
          } repeats:YES];
          
          [self.serviceNameTextField setEditable:NO];
-         //self.connectButton.enabled = !self.connectButton.isEnabled;
          [self.connectButton setTitle:@"Stop"];
          }
-        
-
-    
 }
 
 /*
@@ -217,9 +169,6 @@
 {
     [NSApp endSheet:self.scanWindow returnCode:NSAlertDefaultReturn];
     [self.scanWindow orderOut:self];
-    
-//    NSRange range = NSMakeRange(0, [[self.arrayController arrangedObjects] count]);
-//    [self.arrayController removeObjectsAtArrangedObjectIndexes:[NSIndexSet indexSetWithIndexesInRange:range]];
     
     self.selectedRow = [self.iphoneTableView selectedRow];
 }
