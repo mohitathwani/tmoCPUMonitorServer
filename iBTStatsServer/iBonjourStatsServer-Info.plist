@@ -9,7 +9,7 @@
 	<key>CFBundleIconFile</key>
 	<string>iconMac</string>
 	<key>CFBundleIdentifier</key>
-	<string>in.teramolabs.${PRODUCT_NAME:rfc1034identifier}</string>
+	<string>in.teramolabs.tmoCPUMonitor</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
