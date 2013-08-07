@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		066AF3BA17B2A8F200F79B07 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 066AF3B917B2A8F200F79B07 /* dsa_pub.pem */; };
 		0671F0BA178F3904002BD17D /* iconMac.iconset in Resources */ = {isa = PBXBuildFile; fileRef = 0671F0B9178F3904002BD17D /* iconMac.iconset */; };
 		06BF1BC11799C3C100D2921B /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06BF1BC01799C3C100D2921B /* Sparkle.framework */; };
 		06BF1BC41799C50600D2921B /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 06BF1BC01799C3C100D2921B /* Sparkle.framework */; };
-		06BF1BC61799C6C100D2921B /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 06BF1BC51799C6C100D2921B /* dsa_pub.pem */; };
 		06C82F86173DA80F007E7C8C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06C82F85173DA80F007E7C8C /* Cocoa.framework */; };
 		06C82F90173DA80F007E7C8C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 06C82F8E173DA80F007E7C8C /* InfoPlist.strings */; };
 		06C82F92173DA80F007E7C8C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C82F91173DA80F007E7C8C /* main.m */; };
@@ -49,9 +49,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		066AF3B917B2A8F200F79B07 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		0671F0B9178F3904002BD17D /* iconMac.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = iconMac.iconset; sourceTree = "<group>"; };
 		06BF1BC01799C3C100D2921B /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
-		06BF1BC51799C6C100D2921B /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		06C82F82173DA80F007E7C8C /* iBonjourStatsServer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBonjourStatsServer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06C82F85173DA80F007E7C8C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		06C82F88173DA80F007E7C8C /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -167,7 +167,7 @@
 		06C82F8C173DA80F007E7C8C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				06BF1BC51799C6C100D2921B /* dsa_pub.pem */,
+				066AF3B917B2A8F200F79B07 /* dsa_pub.pem */,
 				06C82F8D173DA80F007E7C8C /* iBonjourStatsServer-Info.plist */,
 				06C82F8E173DA80F007E7C8C /* InfoPlist.strings */,
 				06C82F91173DA80F007E7C8C /* main.m */,
@@ -291,7 +291,7 @@
 				06CA83A11763682F008BCE81 /* redBG.png in Resources */,
 				06CA83A21763682F008BCE81 /* yellowBG.png in Resources */,
 				0671F0BA178F3904002BD17D /* iconMac.iconset in Resources */,
-				06BF1BC61799C6C100D2921B /* dsa_pub.pem in Resources */,
+				066AF3BA17B2A8F200F79B07 /* dsa_pub.pem in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
