@@ -96,6 +96,11 @@
 @property (nonatomic, retain) NSNetService *service;
 
 /**
+ * Temperature returned from C
+ */
+@property (nonatomic) float c_temp;
+
+/**
  * Invoked when user presses the "Search" button
  */
 - (IBAction)connectButtonPressed:(id)sender;

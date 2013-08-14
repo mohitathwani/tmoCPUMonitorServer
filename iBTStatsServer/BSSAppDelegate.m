@@ -37,6 +37,33 @@
     
     self.iphoneTableView.dataSource = self;
     self.iphoneTableView.delegate = self;
+    
+//    NSLog(@"%f",[smcWrapper get_maintemp]);
+    
+    [NSTimer scheduledTimerWithTimeInterval:1.0 block:^(NSTimeInterval time) {
+        self.c_temp=[smcWrapper get_maintemp];
+        self.cpuTemp = [NSNumber numberWithFloat:self.c_temp];
+        
+        [self.fanSpeeds removeAllObjects];
+        int i;
+        for(i=0;i<[smcWrapper get_fan_num];i++){
+            int x = [smcWrapper get_fan_rpm:i];
+            [self.fanSpeeds addObject: [NSNumber numberWithInt:x]];
+            
+        }
+        
+        [self.cpuTempField setStringValue: [NSString stringWithFormat:@"%@",self.cpuTemp]];
+        
+        if ([self.fanSpeeds count] == 2) {
+            [self.fanSpeed1 setStringValue: [NSString stringWithFormat:@"%@",[self.fanSpeeds objectAtIndex:0]]];
+            [self.fanSpeed2 setStringValue: [NSString stringWithFormat:@"%@",[self.fanSpeeds objectAtIndex:1]]];
+        }
+        
+        else {
+            [self.fanSpeed1 setStringValue: [NSString stringWithFormat:@"%@",[self.fanSpeeds objectAtIndex:0]]];
+        }
+    } repeats:YES];
+
 }
 
 #pragma mark NSNetServiceBrowser delegates
@@ -101,29 +128,29 @@
         NSLog(@"Initiate connection here : %ld", (long)self.selectedRow);
          
          self.dataTransmitTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 block:^(NSTimeInterval time) {
-         float c_temp=[smcWrapper get_maintemp];
-         self.cpuTemp = [NSNumber numberWithFloat:c_temp];
+//         float c_temp=[smcWrapper get_maintemp];
+//         self.cpuTemp = [NSNumber numberWithFloat:c_temp];
          
-         [self.fanSpeeds removeAllObjects];
-         int i;
-         for(i=0;i<[smcWrapper get_fan_num];i++){
-         int x = [smcWrapper get_fan_rpm:i];
-         [self.fanSpeeds addObject: [NSNumber numberWithInt:x]];
+//         [self.fanSpeeds removeAllObjects];
+//         int i;
+//         for(i=0;i<[smcWrapper get_fan_num];i++){
+//         int x = [smcWrapper get_fan_rpm:i];
+//         [self.fanSpeeds addObject: [NSNumber numberWithInt:x]];
          
-         }
+//         }
          
          self.infoDictionary = [NSDictionary dictionaryWithObjectsAndKeys:self.cpuTemp,@"cpuTemp",self.fanSpeeds,@"fanSpeeds", nil];
          
-         [self.cpuTempField setStringValue: [NSString stringWithFormat:@"%@",self.cpuTemp]];
+//         [self.cpuTempField setStringValue: [NSString stringWithFormat:@"%@",self.cpuTemp]];
          
-         if ([self.fanSpeeds count] == 2) {
-         [self.fanSpeed1 setStringValue: [NSString stringWithFormat:@"%@",[self.fanSpeeds objectAtIndex:0]]];
-         [self.fanSpeed2 setStringValue: [NSString stringWithFormat:@"%@",[self.fanSpeeds objectAtIndex:1]]];
-         }
-         
-         else {
-         [self.fanSpeed1 setStringValue: [NSString stringWithFormat:@"%@",[self.fanSpeeds objectAtIndex:0]]];
-         }
+//         if ([self.fanSpeeds count] == 2) {
+//         [self.fanSpeed1 setStringValue: [NSString stringWithFormat:@"%@",[self.fanSpeeds objectAtIndex:0]]];
+//         [self.fanSpeed2 setStringValue: [NSString stringWithFormat:@"%@",[self.fanSpeeds objectAtIndex:1]]];
+//         }
+//         
+//         else {
+//         [self.fanSpeed1 setStringValue: [NSString stringWithFormat:@"%@",[self.fanSpeeds objectAtIndex:0]]];
+//         }
          
          NSData *appData = [NSKeyedArchiver archivedDataWithRootObject:self.infoDictionary];
          self.service = [self.services objectAtIndex: self.selectedRow];
@@ -138,19 +165,19 @@
          NSLog(@"Wrote %ld bytes", (long)bytes);
          }
          
-         if (c_temp < 65) {
+         if (self.c_temp < 65) {
          NSImage *windowBG = [NSImage imageNamed:@"greenBG.png"];
          [[self.window contentView] setWantsLayer:YES];
          [[self.window contentView] layer].contents = windowBG;
          }
          
-         else if (c_temp >= 65 && c_temp <79) {
+         else if (self.c_temp >= 65 && self.c_temp <79) {
          NSImage *windowBG = [NSImage imageNamed:@"yellowBG.png"];
          [[self.window contentView] setWantsLayer:YES];
          [[self.window contentView] layer].contents = windowBG;
          }
          
-         else if (c_temp >= 80) {
+         else if (self.c_temp >= 80) {
          NSImage *windowBG = [NSImage imageNamed:@"redBG.png"];
          [[self.window contentView] setWantsLayer:YES];
          [[self.window contentView] layer].contents = windowBG;
